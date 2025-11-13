@@ -1,0 +1,20 @@
+<h1>Sotib olingan Kurslar</h1>
+<div class="general">
+  {{#if user}}
+    {{#if courses.length}}
+      {{#each courses}}
+        <div class="courses__card">
+          <h3 class="card__title">{{course_name}}</h3>
+          <p class="card__price">{{course_price}}</p>
+          <h4 class="card__teacher">{{course_teacher}}</h4>
+        </div>
+      {{/each}}
+    {{else}}
+      <p>Kurslar yo‘q</p>
+    {{/if}}
+  {{else}}
+    <div class="courses__card">
+        <h1>Avval Kirishni amalga oshiring!</h1>
+    </div>
+  {{/if}}
+</div>

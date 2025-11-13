@@ -1,0 +1,17 @@
+<h1>Bizning Kurslar</h1>
+<div class="general">
+    {{#if courses.length}}
+        {{#each courses}}
+            <div class="courses__card">
+                <h3 class="card__title">{{course_name}}</h3>
+                <p class="card__price">{{course_price}}</p>
+                <h4 class="card__teacher">{{course_teacher}}</h4>
+                <form action="/buy/{{id}}" method="post">
+                    <button class="btn">Sotib olish</button>
+                </form>
+            </div>
+        {{/each}}
+        {{else}}
+            <p>Kurslar yo'q</p>
+    {{/if}}
+</div>

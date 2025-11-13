@@ -1,0 +1,13 @@
+const { Router } = require("express")
+const routes = Router()
+const { getMainPage, getLoginPage, loginAccount, accountSettings, logOutAccount, getSignupPage, newAccount, updateAccount, deleteAccount } = require("../controllers/main")
+routes.get("/", getMainPage )
+routes.get("/login", getLoginPage )
+routes.post("/login", loginAccount )
+routes.get("/account", accountSettings )
+routes.post("/logout", logOutAccount)
+routes.post("/signup", newAccount)
+routes.get("/signup", getSignupPage)
+routes.post("/account/update/:id", updateAccount)
+routes.post("/account/delete/:id", deleteAccount)
+exports.routes = routes

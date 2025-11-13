@@ -1,0 +1,35 @@
+<div class="account-box">
+    <h2>👤 Akkaunt sozlamalari</h2>
+
+    {{#if user}}
+      <div class="info">
+        <p><strong>Username:</strong> {{user.username}}</p>
+        {{#if user.email}}
+          <p><strong>Email:</strong> {{user.password}}</p>
+        {{/if}}
+      </div>
+
+      <form action="/account/update/{{user.id}}" method="post" class="update-form">
+        <h3>Ma’lumotni yangilash</h3>
+        <label for="username">Yangi username</label>
+        <input type="text" name="username" value="{{user.username}}" id="username" placeholder="Yangi username..." required />
+
+        <label for="password">Yangi parol</label>
+        <input type="password" name="password" id="password" placeholder="Yangi parol..." required />
+
+        <button type="submit" class="btn update">Yangilash</button>
+      </form>
+
+      <form action="/account/delete/{{user.id}}" method="post" class="delete-form">
+        <button type="submit" class="btn delete">Akkauntni o‘chirish ❌</button>
+      </form>
+
+      <form action="/logout" method="post">
+        <button type="submit" class="btn logout">Chiqish 🚪</button>
+      </form>
+
+    {{else}}
+      <p class="error">Iltimos, tizimga kiring!</p>
+      <a href="/login" class="btn back">Kirish</a>
+    {{/if}}
+  </div>

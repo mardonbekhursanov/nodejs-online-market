@@ -1,5 +1,7 @@
 const Pool = require("pg").Pool
-const connectionString = process.env.DATABASE_URL || `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+const connectionString = process.env.DATABASE_URL || "postgres://postgres:mardon03@localhost:5432/market";
+
+if (!connectionString) throw new Error("DATABASE_URL not set");
 const pool = new Pool({
     user: "postgres",
     password: "mardon03",

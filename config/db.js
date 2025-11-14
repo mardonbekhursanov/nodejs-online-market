@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-const connectionString = process.env.DATABASE_URL || "postgres://postgres:mardon03@localhost:5432/market";
+const connectionString = process.env.DATABASE_URL;
 
 if (!connectionString) throw new Error("DATABASE_URL not set");
 
